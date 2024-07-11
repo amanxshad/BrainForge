@@ -7,6 +7,9 @@ function App() {
   return (
     <div className="App">
       <Slider />
+      <div>
+        <button>Submit</button>
+      </div>
     </div>
   );
 }

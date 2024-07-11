@@ -1,8 +1,6 @@
 body{
-    background-image: 
-        linear-gradient(
-            to top right, #8B5CF6, #EC4899
-        );
+    background-image: linear-gradient(to top right, #4B4B4B, #000000);
+
     min-height: 100vh;
     margin: 0;
     display: flex;
@@ -18,14 +16,14 @@ body{
 }
 .item{
     position: absolute;
-    width: 200px;
+    width: 250px;
     height: 320px;
     text-align: justify;
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
     transition: 0.5s;
-    left: calc(50% - 110px);
+    left: calc(50% - 145px);
     top: 0;
 }
 #next, #prev{
@@ -37,9 +35,9 @@ body{
     font-size: xxx-large;
     font-family: monospace;
     font-weight: bold;
-    left: 400px;
+    left: 500px;
 }
 #next{
     left: unset;
-    right: 400px;
+    right: 500px;
 }

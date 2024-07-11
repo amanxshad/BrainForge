@@ -7,6 +7,28 @@
   pointer-events: none;
 }
 
+button{
+  background-color: transparent;
+  border: 2px solid #fff; /* Blue */
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative;
+  top: 100px;
+}
+
+button:hover {
+  background-color: #2874F0; /* Blue */
+  color: white;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
