@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Slider.css';
 import Item from './Item';
+import { useSwipeable } from 'react-swipeable';
 
 const Slider = () => {
   const [active, setActive] = useState(0);
@@ -9,6 +10,10 @@ const Slider = () => {
 
   useEffect(() => {
     loadShow();
+    window.addEventListener('keyup', handleKeyUp);
+    return () => {
+      window.removeEventListener('keyup', handleKeyUp);
+    };
   }, [active]);
 
   const loadShow = () => {
@@ -38,17 +43,35 @@ const Slider = () => {
     }
   };
 
+  //function to set next card item active
   const nextSlide = () => {
     setActive((prev) => (prev + 1 < items.length ? prev + 1 : prev));
   };
 
+  //function to set previous card item active
   const prevSlide = () => {
     setActive((prev) => (prev - 1 >= 0 ? prev - 1 : prev));
   };
 
+  //function to add event listener on keyUp
+  const handleKeyUp = (event) => {
+    if (event.key === 'ArrowRight') {
+      nextSlide();
+    }
+    if (event.key === 'ArrowLeft') {
+      prevSlide();
+    }
+  };
 
+  //function to handle swipe event on card items
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: nextSlide, // Trigger nextSlide on left swipe
+    onSwipedRight: prevSlide, // Trigger prevSlide on right swipe
+  });
+
+  
   return (
-    <div className="slider">
+    <div className="slider" {...swipeHandlers}>
       {items.map((item, index) => (
         <Item key={index} content={item} ques={questions[index]}/>
       ))}
