@@ -2,14 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 button{
   background-color: transparent;
-  border: 2px solid #fff; /* Blue */
+  border: 2px solid #fff; 
   color: #fff;
   padding: 15px 32px;
   text-align: center;
@@ -21,40 +16,17 @@ button{
   border-radius: 8px;
   transition: background-color 0.3s, color 0.3s;
   position: relative;
-  top: 100px;
+  top: clamp(35px, 3.5vh, 100px);
 }
 
 button:hover {
-  background-color: #2874F0; /* Blue */
+  background-color: #2874F0; 
   color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img{
+  max-height: 45px;
+  position: relative;
+  bottom: 80px;
+  opacity: 0.9;
 }

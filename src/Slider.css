@@ -10,34 +10,69 @@ body{
 }
 .slider{
     position: relative;
-    width: 100%;
-    height: 370px;
-
+    overflow: hidden;
+    top: 50px;
+    width: 100vw; 
+    height: clamp(350px,45vw,450px);
+    max-width: 1600px; 
 }
 .item{
     position: absolute;
-    width: 250px;
-    height: 320px;
+    width: 46%;
+    max-width: 250px;
+    height: 60vw;
+    max-height: 320px;
     text-align: justify;
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
     transition: 0.5s;
-    left: calc(50% - 145px);
-    top: 0;
+    left: calc(50% - var(--item-left-offset));
+    top: 10px;
+    font-size: clamp(0.65rem, 2.8vw ,0.82rem);
+}
+
+@media (orientation: landscape) and (max-width: 1000px) {
+  .slider{
+    height: clamp(250px, 45vh, 400px);
+    top: 10px;
+  }
+  .item{
+    height: clamp(100px, 60vh, 300px);
+    width: clamp(50px, 40vw, 190px); 
+    font-size: clamp(0.65rem, 1.2vw ,0.8rem);
+    left: calc(50% - 110px);
+  }
+
 }
 #next, #prev{
-    position: absolute;
-    top: 40%;
+    position: relative;
+    top: 35%;
     color: #fff;
     background-color: transparent;
     border: none;
     font-size: xxx-large;
     font-family: monospace;
     font-weight: bold;
-    left: 500px;
+    left: 440px;
 }
 #next{
     left: unset;
-    right: 500px;
+    right: 440px;
 }
+
+:root {
+    --item-left-offset: 143px;
+  }
+  
+  @media (375px < width < 560px) {
+    :root {
+        --item-left-offset: calc( 100%/ 3.7 );
+    }
+  }
+  
+  @media (max-width: 375px) {
+    :root {
+      --item-left-offset: 105px;
+    }
+  }
