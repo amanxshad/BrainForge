@@ -1,0 +1,53 @@
+.score{
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  padding: 10px;
+  border-radius: 12px;
+  height: 420px;
+  width: 300px;
+  color: whitesmoke;
+}
+
+.score h1{
+    scale: 0.9;
+    padding-left: 70px;
+    margin-bottom: -40px;
+}
+
+.score h2{
+  scale: 1.5;
+  padding-left: 133px;
+  position:relative;
+  bottom: 235px;
+  opacity: 0.8;
+}
+
+.score h3{
+  scale: 0.7;
+  padding-left: 70px;
+  position:relative;
+  bottom: 120px;
+  color: rgba(75, 192, 192, 1);
+  font-weight: lighter;
+}
+
+.score h4{
+  scale: 0.8;
+  padding-left: 90px;
+  position:relative;
+  bottom: 135px;
+  color: rgba(255, 99, 132, 1);
+  font-weight: lighter;
+}
+
+.scorecard{
+    background-color: aliceblue;
+    opacity: 0.8;
+}
+
+canvas{
+  margin-left: 32px;
+  margin-top: -10px;
+}
+

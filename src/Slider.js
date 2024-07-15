@@ -1,12 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Slider.css';
 import Item from './Item';
 import { useSwipeable } from 'react-swipeable';
+import logo from '../src/images/BrainForge-logo.png';
 
 const Slider = () => {
   const [active, setActive] = useState(0);
   const items = Array.from({ length: 5 }, (_, i) => `Question ${i + 1}`);
   const questions = ['who?', 'how?', 'why?', 'when?', 'for?'];
+  const navigate = useNavigate();
+
+  //function to alert loosing progress on navigating back
+  const handleAlert = (event) => {
+    event.preventDefault(); 
+    const userConfirmed = window.confirm('You will lose your current progress.\n Are you sure you want to go back to the home page?');
+    if (userConfirmed) {
+      navigate('/'); // Manually navigate after confirmation
+    }
+  };
 
   useEffect(() => {
     loadShow();
@@ -69,14 +81,19 @@ const Slider = () => {
     onSwipedRight: prevSlide, // Trigger prevSlide on right swipe
   });
 
-  
   return (
+    <div>
+    <Link to="/" onClick={handleAlert}>
+        <img src={logo} alt='logo' />
+    </Link>
     <div className="slider" {...swipeHandlers}>
+      
       {items.map((item, index) => (
         <Item key={index} content={item} ques={questions[index]}/>
       ))}
       <button id="next" onClick={prevSlide}> &lt; </button>
       <button id="prev" onClick={nextSlide}> &gt; </button>
+    </div>
     </div>
   );
 };

@@ -1,0 +1,53 @@
+.quizSetupWrapper {
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  padding: 30px;
+  border-radius: 12px;
+  height: 240px;
+}
+
+.quizSetup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  font-size: 0.85rem;
+  font-weight: bolder;
+}
+
+.quizSetup label {
+  margin: 15px 0 10px 0;
+}
+
+.quizSetup select{
+  margin-top: 7px;
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+}
+
+.quizSetup input{
+  margin-top: 7px;
+  width: 184px;
+  padding: 6px 7px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.quizSetup button {
+  max-width: 120px;
+  padding: 12px 15px;
+}
+
+.quizSetup input:focus,
+.quizSetup select:focus,
+.quizSetup button:focus {
+  outline: none;
+}
