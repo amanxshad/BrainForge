@@ -16,14 +16,14 @@ A versatile quiz application designed to adapt to any topic of your choice. Sele
 - [Setup](#setup)
 
 ## General info
-A quiz game, created with React. 5 questions are asked, with 4 options to choose for an answer. implemented blobs in CSS, form handling in React, applied props passing and state manipulation.
+A quiz game, created with React. Based on topic input and chosen difficulty 5 questions are generated, with 4 options to choose for an answer. implemented swipeable 3d slider using inline styles in js, form handling in React, applied props passing and state manipulation.
 <br>
 
 Link to the website: <a href="https://alanbaltabay-react-quiz.netlify.app">link</a> <br>
 Questions are taken from: <a href="https://openai.com/index/openai-api/">OpenAi</a>
 
 ## Design
-![image](.src/images/readmeBF.png)
+![image](./src/images/readmeBF.png)
 
 ## Technologies
 - JavaScript (fetch API) 
