@@ -11,11 +11,11 @@ import './App.css';
 
 function App() {
   const [quizSettings, setQuizSettings] = useState(null);
-
+ 
   return (
     <Router>
     <Routes>
-
+      
       <Route path="/quiz" element={
         <div className="App">
           <Slider quizSettings={quizSettings}/>
@@ -25,19 +25,21 @@ function App() {
         </div>
       }/>
 
-      <Route path="/score" element={ <div className='score'> 
-        <Link to="/">
-        <img src={logo} alt='logo' style={{ bottom:'85px'}}/> 
-        </Link>
-        <Score/> 
-        <Link to="/">
-          <button>Retry</button>
-        </Link>
+      <Route path="/score" element={ 
+        <div className='score'> 
+          <Link to="/">
+            <img src={logo} alt='logo' style={{ bottom:'85px'}}/> 
+          </Link>
+          <Score/> 
+          <Link to="/">
+            <button>Retry</button>
+          </Link>
         </div> } />
 
-      <Route path="/" element={ <div className='userinput'> 
-        <img src={logo} alt='logo' /> 
-        <QuizSetup setQuizSettings={setQuizSettings}/> 
+      <Route path="/" element={ 
+        <div className='userinput'> 
+          <img src={logo} alt='logo' /> 
+          <QuizSetup setQuizSettings={setQuizSettings}/> 
         </div>}/>
 
     </Routes>

@@ -4,7 +4,7 @@ import styles from './QuizSetup.module.css';
 
 function QuizSetup({ setQuizSettings }) {
   const [topic, setTopic] = useState('');
-  const [difficulty, setDifficulty] = useState('');
+  const [difficulty, setDifficulty] = useState('easy');
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {

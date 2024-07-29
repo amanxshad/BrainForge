@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 
-const Item = ({ content, ques, style }) => {
-  const options = ['A', 'B', 'C', 'D']; // Replace with your list of options
-  const [selectedOption, setSelectedOption] = useState(); // Initial selected option
+const Item = ({ content, ques, options }) => {
+  const [selectedOption, setSelectedOption] = useState('');
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
 
   return (
-    <div className="item" style={style}>
+    <div className="item">
       <h1>{content}</h1>
       <div>
         <h3>{ques}</h3>
-        {options.map((option) => (
-          <div key={option}>
+        {options.map((option, index) => (
+          <div key={index}>
             <input
               type="radio"
-              id={`${content}-${option}`} // Unique id based on content prop
-              name={`${content}-options`} // Unique name based on content prop
+              id={`${content}-${option}`}
+              name={`${content}-options`}
               value={option}
               checked={selectedOption === option}
               onChange={handleOptionChange}
